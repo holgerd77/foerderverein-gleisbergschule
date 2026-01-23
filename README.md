@@ -8,3 +8,4 @@ Der Quellcode der Website befindet sich in dem Ordner `website`. Pull requests m
 
 ### Technische Basis
 
+TODO
