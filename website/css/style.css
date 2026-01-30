@@ -185,6 +185,7 @@ main {
   padding: var(--spacing-lg);
   border-radius: 8px;
   border-left: 4px solid var(--color-accent);
+  overflow: hidden; /* für float clearfix */
 }
 
 .intro-box p {
@@ -193,6 +194,24 @@ main {
 
 .intro-box p:last-child {
   margin-bottom: 0;
+}
+
+.intro-image {
+  float: right;
+  width: 40%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 0 var(--spacing-xs) var(--spacing-md);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 500px) {
+  .intro-image {
+    width: 38%;
+    max-width: 140px;
+    margin: 0 0 var(--spacing-xs) var(--spacing-sm);
+  }
 }
 
 /* News-Liste */
