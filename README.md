@@ -8,4 +8,10 @@ Der Quellcode der Website befindet sich in dem Ordner `website`. Pull requests m
 
 ### Technische Basis
 
-TODO
+Die Webseite ist als statische Webseite implementiert und nutzt ausschließlich HTML und CSS.
+
+Zentrale KI-Prompts zur Erstellung der Webseite und für inhaltliche oder technische Updates finden sich im Ordner [ki-prompts](ki-prompts).
+
+## Lizenz
+
+Der Quellcode der Webseite ist unter der [MIT-Lizenz](LICENSE) lizenziert.
