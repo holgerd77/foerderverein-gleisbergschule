@@ -1,0 +1,454 @@
+/* ===========================================
+   Förderverein Gleisbergschule - Stylesheet
+   Farben inspiriert vom Newsletter 2024
+   =========================================== */
+
+/* CSS Reset und Grundlagen */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Hauptfarben aus Logo und Newsletter */
+  --color-primary: #2C4A7C;       /* Dunkelblau */
+  --color-secondary: #4A5621;     /* Olivgrün */
+  --color-accent: #E6A42C;        /* Orange/Gelb */
+  --color-accent-light: #F5C45A;  /* Helles Orange */
+  
+  /* Neutrale Farben */
+  --color-white: #FFFFFF;
+  --color-light: #F8F9FA;
+  --color-gray: #6C757D;
+  --color-dark: #333333;
+  
+  /* Abstände */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Schriften */
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+  
+  /* Breiten */
+  --max-width: 1100px;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: var(--line-height);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+
+.site-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  background-color: var(--color-white);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: var(--spacing-sm);
+  display: none;
+}
+
+/* Navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.main-nav a {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.main-nav a.active {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* ===========================================
+   Haupt-Inhalt
+   =========================================== */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+/* Abschnitte */
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 3px solid var(--color-accent);
+  display: inline-block;
+}
+
+.section-subtitle {
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Hero-Bereich (Startseite) */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3D5A8A 100%);
+  color: var(--color-white);
+  padding: var(--spacing-xl) var(--spacing-md);
+  margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-md)) var(--spacing-xl);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Intro-Box */
+.intro-box {
+  background-color: var(--color-light);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-accent);
+}
+
+.intro-box p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.intro-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* News-Liste */
+.news-list {
+  list-style: none;
+}
+
+.news-list li {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.news-text {
+  flex-grow: 1;
+}
+
+/* Kontakt-Box */
+.contact-box {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+}
+
+.contact-box a {
+  color: var(--color-accent-light);
+}
+
+.contact-box .note {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm);
+  border-radius: 4px;
+  margin-top: var(--spacing-md);
+  font-size: 0.95rem;
+}
+
+/* Mitgliedschaft-Box */
+.membership-box {
+  background-color: var(--color-light);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+}
+
+.membership-box h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.bank-details {
+  background-color: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: var(--spacing-md);
+}
+
+.bank-details dt {
+  font-weight: 600;
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+.bank-details dd {
+  margin-bottom: var(--spacing-xs);
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+/* Download-Button */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-top: var(--spacing-sm);
+}
+
+.btn:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* ===========================================
+   Projekte-Seite
+   =========================================== */
+
+.project-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.project-card {
+  background-color: var(--color-light);
+  border-radius: 8px;
+  overflow: hidden;
+  border-left: 4px solid var(--color-secondary);
+}
+
+.project-card-content {
+  padding: var(--spacing-md);
+}
+
+.project-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.project-card p {
+  color: var(--color-gray);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================================
+   Impressum-Seite
+   =========================================== */
+
+.legal-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.legal-section h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.legal-section h3 {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.legal-section p,
+.legal-section ul {
+  margin-bottom: var(--spacing-sm);
+}
+
+.legal-section ul {
+  padding-left: var(--spacing-md);
+}
+
+address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+/* ===========================================
+   Footer
+   =========================================== */
+
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: var(--color-white);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+/* Tablet und größer */
+@media (min-width: 600px) {
+  .logo-text {
+    display: block;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Navigation Anpassungen */
+@media (max-width: 500px) {
+  .header-container {
+    justify-content: center;
+  }
+  
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs);
+  }
+}
