@@ -1,4 +1,7 @@
 # Ressourcen für die lokale KI-Generierung der Webseite
 ressourcen/
 
+# Lokale Tech-Deploy Info
+tech/
+
 .DS_Store
