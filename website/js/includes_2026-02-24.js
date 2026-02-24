@@ -1,6 +1,6 @@
 (function () {
   var scriptSrc = document.currentScript.getAttribute('src');
-  var base = scriptSrc.replace('js/includes.js', '');
+  var base = scriptSrc.replace(/js\/includes[^/]*\.js$/, '');
   var page = location.pathname.split('/').pop() || 'index.html';
 
   function includeHTML(id, file) {
