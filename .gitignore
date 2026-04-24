@@ -4,4 +4,15 @@ ressourcen/
 # Lokale Tech-Deploy Info
 tech/
 
+# Python venv für die Poster-Generierung
+poster-venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Zwischendateien der Poster-Generierung
+poster/poster_foerderverein_a1.html
+poster/preview*.png
+
 .DS_Store
